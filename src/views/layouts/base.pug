@@ -5,8 +5,10 @@ block vars
 - baseUrl = baseUrl || '/'
 - title = title || 'Frontend Boilerplate'
 - description = description || 'Webpack project starter with Pug, Sass, jQuery, Babel and Yarn'
-- keyword = keyword || 'Frontend, Boilerplate'
+- keywords = keywords || 'Frontend, Boilerplate'
 - author = author || 'Frontend Boilerplate'
+- logo = require('source/assets/images/logo.png')
+- url = url || 'http://localhost:8080'
 
 doctype html
 html(lang="en")
@@ -14,13 +16,27 @@ html(lang="en")
 
     //- Meta
     meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     title=title
     meta(name="description", content=description)
-    meta(name="keywords", content=keyword)
-    meta(name="robots", content="index, follow")
+    meta(name="keywords", content=keywords)
     meta(name="author", content=author)
-    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+
+    //- Twitter
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:site', content=title)
+    meta(name='twitter:image', content=logo)
+    meta(name='twitter:description', content=description)
+
+    //- Facebook
+    meta(property='og:url', content=url)
+    meta(property='og:title', content=title)
+    meta(property='og:description', content=description)
+    meta(property='og:image', content=logo)
+    meta(property='og:type', content='website')
+
+    meta(name="robots", content="index, follow")
     meta(name="theme-color", content="#ff9900")
     meta(name="msapplication-TileColor", content="#ff9900")
     meta(name="msapplication-config" content=baseUrl + "browserconfig.xml")
@@ -31,7 +47,7 @@ html(lang="en")
     link(rel="icon", type="image/png", sizes="32x32", href=baseUrl + "assets/images/favicon-32x32.png")
     link(rel="icon", type="image/png", sizes="16x16", href=baseUrl + "assets/images/favicon-16x16.png")
     link(rel="shortcut icon", href=baseUrl + "assets/images/favicon.ico")
-  
+
   body(class=bodyClass)
 
     //- Header

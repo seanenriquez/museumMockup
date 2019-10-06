@@ -70,7 +70,7 @@ module.exports = env => {
         {
           test: /\.pug$/,
           use: [
-            { loader: 'pug-loader', options: { pretty: nodeEnv === 'development' } }
+            { loader: 'pug-loader', options: { pretty: nodeEnv !== 'production' } }
           ], 
         },
         {
@@ -78,7 +78,7 @@ module.exports = env => {
           loader: 'url-loader',
           options: {
             limit: 3000,
-            name: 'assets/images/[name].[hash:7].[ext]'
+            name: 'assets/images/[name].[ext]'
           }
         },
         {
@@ -86,7 +86,7 @@ module.exports = env => {
           loader: 'url-loader',
           options: {
             limit: 5000,
-            name: 'assets/fonts/[name].[hash:7].[ext]'
+            name: 'assets/fonts/[name].[ext]'
           }
         }
       ]
@@ -126,7 +126,7 @@ module.exports = env => {
       ]),
       new MiniCssExtractPlugin({
         filename: 'assets/css/[name].[hash:7].bundle.css',
-        chunkFilename: '[id].css',
+        chunkFilename: '[id].[hash:7].css',
       }),
 
       /*

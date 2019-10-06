@@ -1,4 +1,7 @@
 exports.pages = function (env, folder = '') {
+
+  const nodeEnv = env.NODE_ENV;
+
   const rootPagesFolderName = 'pages'
   const HtmlWebpackPlugin = require('html-webpack-plugin')
   const fs = require('fs')
@@ -19,7 +22,7 @@ exports.pages = function (env, folder = '') {
       inject: true
     };
 
-    if (env === 'development') {
+    if (nodeEnv !== 'production') {
       options.minify = {
         removeComments: true,
         collapseWhitespace: true,
