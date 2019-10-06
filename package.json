@@ -6,10 +6,10 @@
   "repository": "git@github.com:lennguyen/frontend-boilerplate.git",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf dist && webpack --config ./build/webpack.config.js --env.NODE_ENV=staging --mode=development --progress",
+    "build": "rimraf dist && webpack --config ./build/webpack.config.js --env.NODE_ENV=staging --mode=development --progress ",
     "dev-network": "webpack-dev-server --config ./build/webpack.config.js --env.NODE_ENV=development --mode=development --progress --open --host 0.0.0.0",
     "dev": "webpack-dev-server --config ./build/webpack.config.js --env.NODE_ENV=development --mode=development --progress --open",
-    "prod": "rimraf dist && webpack --config ./build/webpack.config.js --env.NODE_ENV=production --mode=production -p --progress"
+    "prod": "rimraf dist && webpack --config ./build/webpack.config.js --env.NODE_ENV=production --mode=production -p --progress "
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",

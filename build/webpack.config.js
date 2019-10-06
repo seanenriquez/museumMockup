@@ -116,13 +116,13 @@ module.exports = env => {
       new CopyWebpackPlugin([
         { from: '../manifest.json', to: 'manifest.json' },
         { from: '../browserconfig.xml', to: 'browserconfig.xml' },
-        { from: 'assets/images/favicons/android-chrome-192x192.png', to: 'assets/images/android-chrome-192x192.png' },
-        { from: 'assets/images/favicons/android-chrome-256x256.png', to: 'assets/images/android-chrome-256x256.png' },
-        { from: 'assets/images/favicons/apple-touch-icon.png', to: 'assets/images/apple-touch-icon.png' },
-        { from: 'assets/images/favicons/favicon-16x16.png', to: 'assets/images/favicon-16x16.png' },
-        { from: 'assets/images/favicons/favicon-32x32.png', to: 'assets/images/favicon-32x32.png' },
-        { from: 'assets/images/favicons/favicon.ico', to: 'assets/images/favicon.ico' },
-        { from: 'assets/images/favicons/mstile-150x150.png', to: 'assets/images/mstile-150x150.png' }
+        { from: 'assets/icons/android-chrome-192x192.png', to: 'assets/icons/android-chrome-192x192.png' },
+        { from: 'assets/icons/android-chrome-256x256.png', to: 'assets/icons/android-chrome-256x256.png' },
+        { from: 'assets/icons/apple-touch-icon.png', to: 'assets/icons/apple-touch-icon.png' },
+        { from: 'assets/icons/favicon-16x16.png', to: 'assets/icons/favicon-16x16.png' },
+        { from: 'assets/icons/favicon-32x32.png', to: 'assets/icons/favicon-32x32.png' },
+        { from: 'assets/icons/favicon.ico', to: 'favicon.ico' },
+        { from: 'assets/icons/mstile-150x150.png', to: 'assets/icons/mstile-150x150.png' }
       ]),
       new MiniCssExtractPlugin({
         filename: 'assets/css/[name].[hash:7].bundle.css',
@@ -137,14 +137,20 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: 'views/index.pug',
-        inject: true
+        inject: true,
+        minify: nodeEnv === 'production' ? ({
+          removeComments: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true,
+        }) : false
       }),
 
       // pages/ folder
       ...utils.pages(env),
 
-      // pages/list folder
+      // pages/ sub folders
       ...utils.pages(env, 'list'),
+      ...utils.pages(env, 'news'),
 
       new webpack.ProvidePlugin({
         $: 'jquery',

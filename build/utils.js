@@ -11,25 +11,27 @@ exports.pages = function (env, folder = '') {
   var pages = []
 
   fs.readdirSync(viewsFolder).forEach(view => {
-    if (view.split('.')[1] === undefined)
-      return false;
 
-    const viewName = view.split('.')[0];
+    const fn = view.split('.');
+    const ext = fn[1];
+    if (ext === undefined || ext !== 'pug')
+      return false;
+    
+    const viewName = fn[0];
     const fileName = folder === '' ? `${viewName}/index.html` : `${folder}/${viewName}/index.html`;
     const options = {
       filename: fileName,
-      template: `views/${rootPagesFolderName}/${folder}/${view}`,
+      template: folder === '' ? `views/${rootPagesFolderName}/${view}` : `views/${rootPagesFolderName}/${folder}/${view}`,
       inject: true
     };
 
-    if (nodeEnv !== 'production') {
+    if (nodeEnv === 'production') {
       options.minify = {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true,
       };
     }
-
     pages.push(new HtmlWebpackPlugin(options));
   })
 
