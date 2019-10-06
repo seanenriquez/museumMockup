@@ -34,19 +34,21 @@ A starter kit for frontend project using Yarn, Webpack, Pug, Sass, Babel, Bootst
 
 1. Clone the `master` branch of the repository first `git@github.com:lennguyen/frontend-boilerplate.git`.
 2. Open the folder `frontend-boilerplate` in your code editor because that one contains the source code.
-3. Start the `development server` of the project with `yarn run dev` (if you want to test the development server in your local network, you should run `yarn run dev-network` instead and with the IP of your host computer, you can access to the website in your other devices)
-4. Check the available routes of your website.
+3. Run `yarn install` to install all dependencies.
+4. Start the `development server` of the project with `yarn run dev` (if you want to test the development server in your local network, you should run `yarn run dev-network` instead and with the IP of your host computer, you can access to the website in your other devices)
+5. Check the available routes of your website.
 * `/`: Home page
 * `/list`: List page
 * `/list/detail`: Detail page
-5. Perform all the modifications you need
+6. Perform all the modifications you need
 
 ### Compiling to production
-6. In order to generate the production package, press `CTRL + C` to stop the development server and run the command `yarn run prod` and the production build is going to be generated in the `dist` folder.
+7. In order to generate the production package, press `CTRL + C` to stop the development server and run the command `yarn run prod` and the production build is going to be generated in the `dist` folder. 
+8. Run `yarn run build` to build the project without minification.
 
 ### Testing
-7. You should always test the production package in your local before push to the repository, open the `dist` folder in your explorer/finder and open the `index.html` with your browser or
-8. use the recommended way installing `http-server` with `yarn global add http-server` and inside the `dist` folder run the command `http-server -p 9090` to finally open the url `http://localhost:9090` to see the production package in action.
+9. You should always test the production package in your local before push to the repository, open the `dist` folder in your explorer/finder and open the `index.html` with your browser or
+10. use the recommended way installing `http-server` with `yarn global add http-server` and inside the `dist` folder run the command `http-server -p 9090` to finally open the url `http://localhost:9090` to see the production package in action.
 
 ## Project structure
 
