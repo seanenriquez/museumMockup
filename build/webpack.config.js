@@ -29,12 +29,13 @@ module.exports = env => {
       contentBase: path.resolve(__dirname, '../src'),
     },
     resolve: {
-      extensions: ['.js'],
+      extensions: ['.js', '.css', '.scss', '.pug'],
       alias: {
         modules: path.resolve(__dirname, '../node_modules'),
         source: path.resolve(__dirname, '../src'),
         images: path.resolve(__dirname, '../src/assets/images'),
         fonts: path.resolve(__dirname, '../src/assets/fonts'),
+        styles: path.resolve(__dirname, '../src/assets/styles'),
         scripts: path.resolve(__dirname, '../src/assets/scripts'),
       }
     },

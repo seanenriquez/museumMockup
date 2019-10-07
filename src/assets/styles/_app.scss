@@ -7,7 +7,7 @@
 /*
   Bootstrap
 */
-@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import '~modules/bootstrap/scss/bootstrap';
 
 /*
   Utils
@@ -30,4 +30,4 @@
   Pages
 */
 @import './pages/index';
-@import './pages/blog';
+@import './pages/list';
