@@ -120,8 +120,8 @@ module.exports = env => {
         { from: 'assets/icons/favicon.ico', to: 'favicon.ico' },
         { from: 'assets/icons', to: 'assets/icons' },
         { from: 'assets/fonts', to: 'assets/fonts' },
+        { from: 'assets/images', to: 'assets/images' },
         { from: 'assets/videos', to: 'assets/videos' },
-        { from: 'assets/images', to: 'assets/images' }
       ]),
       new MiniCssExtractPlugin({
         filename: 'assets/css/[name].[hash:7].bundle.css',
