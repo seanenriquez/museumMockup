@@ -2,10 +2,9 @@
 
 .home-page {
   margin: 0;
-  background-image: url(~images/logo.png);
-  background-repeat: no-repeat;
-  background-position: center;
   background-attachment: fixed;
+
+  @include bg-image('/assets/images/logo.png');
 }
 
 

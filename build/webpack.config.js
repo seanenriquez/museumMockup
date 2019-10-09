@@ -117,13 +117,11 @@ module.exports = env => {
       new CopyWebpackPlugin([
         { from: '../manifest.json', to: 'manifest.json' },
         { from: '../browserconfig.xml', to: 'browserconfig.xml' },
-        { from: 'assets/icons/android-chrome-192x192.png', to: 'assets/icons/android-chrome-192x192.png' },
-        { from: 'assets/icons/android-chrome-256x256.png', to: 'assets/icons/android-chrome-256x256.png' },
-        { from: 'assets/icons/apple-touch-icon.png', to: 'assets/icons/apple-touch-icon.png' },
-        { from: 'assets/icons/favicon-16x16.png', to: 'assets/icons/favicon-16x16.png' },
-        { from: 'assets/icons/favicon-32x32.png', to: 'assets/icons/favicon-32x32.png' },
         { from: 'assets/icons/favicon.ico', to: 'favicon.ico' },
-        { from: 'assets/icons/mstile-150x150.png', to: 'assets/icons/mstile-150x150.png' }
+        { from: 'assets/icons', to: 'assets/icons' },
+        { from: 'assets/fonts', to: 'assets/fonts' },
+        { from: 'assets/videos', to: 'assets/videos' },
+        { from: 'assets/images', to: 'assets/images' }
       ]),
       new MiniCssExtractPlugin({
         filename: 'assets/css/[name].[hash:7].bundle.css',
