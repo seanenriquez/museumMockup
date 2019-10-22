@@ -57,8 +57,8 @@ module.exports = env => {
           use: [
             nodeEnv === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
             { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
-            'postcss-loader',
-            'sass-loader',
+            { loader: 'postcss-loader', options: { sourceMap: true } },
+            { loader: 'sass-loader', options: { sourceMap: true } },
           ],
         },
         {
@@ -92,7 +92,7 @@ module.exports = env => {
           }
         },
         {
-          test: /\.(mp4)(\?.*)?$/,
+          test: /\.(mp4|ogg)(\?.*)?$/,
           loader: 'url-loader',
           options: {
             limit: false,
@@ -119,6 +119,7 @@ module.exports = env => {
             test: /node_modules/
           },
           styles: {
+            name: 'styles',
             test: /\.css$/,
             chunks: 'all',
             enforce: true
