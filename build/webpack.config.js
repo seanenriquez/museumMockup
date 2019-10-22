@@ -53,14 +53,7 @@ module.exports = env => {
           ]
         },
         {
-          test: /\.css$/,
-          use: [
-            nodeEnv === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
-            { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
-          ],
-        },
-        {
-          test: /\.scss$/,
+          test: /\.(s?)css$/,
           use: [
             nodeEnv === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
             { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
@@ -108,7 +101,12 @@ module.exports = env => {
             filename: 'assets/js/vendor.[hash:7].bundle.js',
             chunks: 'all',
             test: /node_modules/
-          }
+          },
+          styles: {
+            test: /\.css$/,
+            chunks: 'all',
+            enforce: true
+          },
         }
       }
     },
@@ -117,12 +115,12 @@ module.exports = env => {
       new CopyWebpackPlugin([
         { from: '../manifest.json', to: 'manifest.json' },
         { from: '../browserconfig.xml', to: 'browserconfig.xml' },
-        { from: 'assets/icons/favicon.ico', to: 'favicon.ico' },
         { from: 'assets/icons', to: 'assets/icons' },
         { from: 'assets/fonts', to: 'assets/fonts' },
         { from: 'assets/images', to: 'assets/images' },
         { from: 'assets/videos', to: 'assets/videos' },
       ]),
+      // Extract CSS
       new MiniCssExtractPlugin({
         filename: 'assets/css/[name].[hash:7].bundle.css',
         chunkFilename: '[id].[hash:7].css',
