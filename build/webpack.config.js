@@ -68,7 +68,23 @@ module.exports = env => {
           ], 
         },
         {
-          test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+            limit: 5000,
+            name: 'assets/fonts/[name].[ext]'
+          }
+        },
+        {
+          test: /\.(ico)(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+            limit: 1000,
+            name: 'assets/icons/[name].[ext]'
+          }
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
           loader: 'url-loader',
           options: {
             limit: 3000,
@@ -76,13 +92,13 @@ module.exports = env => {
           }
         },
         {
-          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          test: /\.(mp4)(\?.*)?$/,
           loader: 'url-loader',
           options: {
-            limit: 5000,
-            name: 'assets/fonts/[name].[ext]'
+            limit: false,
+            name: 'assets/videos/[name].[ext]'
           }
-        }
+        },
       ]
     },
     optimization: {
