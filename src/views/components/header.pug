@@ -1,11 +1,8 @@
 //- src/views/components/header.pug
+include ../mixins/all
 
 header.header
   nav(role="navigation")
     img(src="/assets/images/logo.png", width="35")
     a.brand Frontend Boilerplate
-    ul
-      li: a(href="/") Home
-      li: a(href="/list") List
-      li: a(href="/news") News
-      li: a(href="/contact") Contact
+    +nav([{title: 'Home', href: '/'}, {title: 'List', href: '/list'}, {title: 'News', href: '/news'}, {title: 'Contact', href: '/contact'}])

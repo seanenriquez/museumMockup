@@ -9,8 +9,11 @@
   ul {
     float: right;
     li {
-      display: inline;
+      display: inline-block;
       margin: 0 10px;
+      &.active {
+        text-decoration: underline;
+      }
     }
   }
     
