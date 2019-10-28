@@ -1,12 +1,13 @@
 //- base layout
 block vars
-
+- name = 'Frontend Boilerplate'
 - bodyClass = bodyClass || ''
 - baseUrl = baseUrl || '/'
-- title = title || 'Frontend Boilerplate'
+- title = title || 'Home page'
 - description = description || 'Webpack project starter with Pug, Sass, jQuery, Babel and Yarn'
 - keywords = keywords || 'Frontend, Boilerplate'
-- author = author || 'Frontend Boilerplate'
+- author = author || 'Spider Company Limited'
+- currentUrl = currentUrl || '/'
 - logo = '/assets/images/logo.png'
 - url = url || 'http://localhost:8080'
 
@@ -16,7 +17,7 @@ html(lang="en")
 
     //- Meta
     meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     title=title
     meta(name="description", content=description)
@@ -52,7 +53,7 @@ html(lang="en")
     //- Fonts
     link(href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap&subset=vietnamese", rel="stylesheet")
 
-  body(class=bodyClass)
+  body(class=bodyClass).d-flex.flex-column
 
     //- Header
     include ../components/header.pug

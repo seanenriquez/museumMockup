@@ -8,22 +8,21 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 // Files
-const utils = require('./utils')
+const utils = require('./utils');
 
 // Configuration
-module.exports = env => {
-
+module.exports = (env) => {
   const nodeEnv = env.NODE_ENV;
 
   return {
     context: path.resolve(__dirname, '../src'),
     entry: {
-      app: './app.js'
+      app: './app.js',
     },
     output: {
       path: path.resolve(__dirname, '../dist'),
       publicPath: '/',
-      filename: 'assets/js/[name].[hash:7].bundle.js'
+      filename: 'assets/js/[name].[hash:7].bundle.js',
     },
     devServer: {
       contentBase: path.resolve(__dirname, '../src'),
@@ -37,7 +36,7 @@ module.exports = env => {
         fonts: path.resolve(__dirname, '../src/assets/fonts'),
         styles: path.resolve(__dirname, '../src/assets/styles'),
         scripts: path.resolve(__dirname, '../src/assets/scripts'),
-      }
+      },
     },
 
     /*
@@ -46,17 +45,32 @@ module.exports = env => {
     module: {
       rules: [
         {
+          enforce: 'pre',
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'eslint-loader',
+        },
+        {
           test: /\.js$/,
           exclude: /node_modules/,
           use: [
-            { loader: 'babel-loader', options: { presets: ['@babel/preset-env'] } }
-          ]
+            {
+              loader: 'babel-loader',
+              options: { presets: ['@babel/preset-env'] },
+            },
+            'eslint-loader',
+          ],
         },
         {
           test: /\.(s?)css$/,
           use: [
-            nodeEnv === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
-            { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
+            nodeEnv === 'development'
+              ? 'style-loader'
+              : MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: { importLoaders: 1, sourceMap: true },
+            },
             { loader: 'postcss-loader', options: { sourceMap: true } },
             { loader: 'sass-loader', options: { sourceMap: true } },
           ],
@@ -64,42 +78,45 @@ module.exports = env => {
         {
           test: /\.pug$/,
           use: [
-            { loader: 'pug-loader', options: { pretty: nodeEnv !== 'production' } }
-          ], 
+            {
+              loader: 'pug-loader',
+              options: { pretty: nodeEnv !== 'production' },
+            },
+          ],
         },
         {
           test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
           loader: 'url-loader',
           options: {
             limit: 5000,
-            name: 'assets/fonts/[name].[ext]'
-          }
+            name: 'assets/fonts/[name].[ext]',
+          },
         },
         {
           test: /\.(ico)(\?.*)?$/,
           loader: 'url-loader',
           options: {
             limit: 1000,
-            name: 'assets/icons/[name].[ext]'
-          }
+            name: 'assets/icons/[name].[ext]',
+          },
         },
         {
           test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
           loader: 'url-loader',
           options: {
             limit: 3000,
-            name: 'assets/images/[name].[ext]'
-          }
+            name: 'assets/images/[name].[ext]',
+          },
         },
         {
           test: /\.(mp4|ogg)(\?.*)?$/,
           loader: 'url-loader',
           options: {
             limit: false,
-            name: 'assets/videos/[name].[ext]'
-          }
+            name: 'assets/videos/[name].[ext]',
+          },
         },
-      ]
+      ],
     },
     optimization: {
       minimizer: [
@@ -116,16 +133,16 @@ module.exports = env => {
           vendor: {
             filename: 'assets/js/vendor.[hash:7].bundle.js',
             chunks: 'all',
-            test: /node_modules/
+            test: /node_modules/,
           },
           styles: {
             name: 'styles',
             test: /\.css$/,
             chunks: 'all',
-            enforce: true
+            enforce: true,
           },
-        }
-      }
+        },
+      },
     },
 
     plugins: [
@@ -152,29 +169,31 @@ module.exports = env => {
         filename: 'index.html',
         template: 'views/index.pug',
         inject: true,
-        minify: nodeEnv === 'production' ? ({
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-        }) : false
+        minify:
+          nodeEnv === 'production'
+            ? {
+              removeComments: true,
+              collapseWhitespace: true,
+              removeAttributeQuotes: true,
+            }
+            : false,
       }),
 
       // pages/ folder
       ...utils.pages(env),
 
       // pages/ sub folders
-      ...utils.pages(env, 'list'),
-      ...utils.pages(env, 'news'),
+      ...utils.pages(env, 'service'),
 
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
         'window.$': 'jquery',
-        'window.jQuery': 'jquery'
+        'window.jQuery': 'jquery',
       }),
       new WebpackNotifierPlugin({
-        title: 'Frontend Boilerplate'
-      })
-    ]
-  }
+        title: 'Frontend Boilerplate',
+      }),
+    ],
+  };
 };

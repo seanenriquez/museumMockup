@@ -1,0 +1,5 @@
+//- src/views/mixins/nav-item.pug
+
+mixin nav-item(title, href, text)
+  li.nav-item(class={active: currentUrl === href})
+    +link(title, href, text)(class="nav-link")

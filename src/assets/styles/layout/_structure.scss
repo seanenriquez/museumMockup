@@ -1,5 +1,13 @@
 /* src/assets/styles/layout/_structure.scss  */
 
+html {
+  height: 100%;
+}
+
 body {
-  font-family: $quicksand;
+  height: 100%;
+}
+
+main > .container-fluid {
+  margin-top: 56px;
 }

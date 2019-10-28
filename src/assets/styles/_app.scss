@@ -9,6 +9,15 @@
 */
 @import '~modules/bootstrap/scss/bootstrap';
 
+/* 
+  Libraries
+*/
+$slick-font-path: "~modules/slick-carousel/slick/fonts/" !default;
+$slick-loader-path: "~modules/slick-carousel/slick/" !default;
+$slick-arrow-color: $color !default;
+@import '~modules/slick-carousel/slick/slick.scss'; 
+@import '~modules/slick-carousel/slick/slick-theme.scss'; 
+
 /*
   Utils
 */
@@ -19,6 +28,8 @@
 */
 @import './components/header';
 @import './components/footer';
+@import './components/navbar';
+@import './components/carousel';
 
 /*
   Layout
@@ -30,3 +41,6 @@
   Pages
 */
 @import './pages/index';
+@import './pages/about';
+@import './pages/service';
+@import './pages/contact';
