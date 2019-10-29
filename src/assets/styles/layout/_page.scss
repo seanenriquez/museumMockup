@@ -1,16 +1,14 @@
 /* src/assets/styles/layout/_page.scss  */
 
 .page {
-  
 }
 .page-title {
-  font-size: 1.5em;
   padding: 0.5em 0;
+  color: $primary;
 }
 
 /*
   Responsive
 */
 @include media-breakpoint-down(sm) {
-
 }

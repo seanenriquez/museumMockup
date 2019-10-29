@@ -12,11 +12,11 @@
 /* 
   Libraries
 */
-$slick-font-path: "~modules/slick-carousel/slick/fonts/" !default;
-$slick-loader-path: "~modules/slick-carousel/slick/" !default;
+$slick-font-path: '~modules/slick-carousel/slick/fonts/' !default;
+$slick-loader-path: '~modules/slick-carousel/slick/' !default;
 $slick-arrow-color: $color !default;
-@import '~modules/slick-carousel/slick/slick.scss'; 
-@import '~modules/slick-carousel/slick/slick-theme.scss'; 
+@import '~modules/slick-carousel/slick/slick.scss';
+@import '~modules/slick-carousel/slick/slick-theme.scss';
 
 /*
   Utils

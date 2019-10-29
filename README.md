@@ -78,7 +78,8 @@ The purpose if this webpack starter is to allow people to create websites withou
 
 ## Linters
 
-- https://eslint.org/
+- Coding standard: https://github.com/airbnb/javascript
+- Use ESLint (https://eslint.org) and Airbnb (https://www.npmjs.com/package/eslint-config-airbnb-base)
 
 ## Code Format
 

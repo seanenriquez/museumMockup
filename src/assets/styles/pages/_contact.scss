@@ -4,11 +4,9 @@
   margin: 0;
 }
 
-
 /*
   Responsive
 */
 
 @include media-breakpoint-down(sm) {
-  margin: 1px;
 }

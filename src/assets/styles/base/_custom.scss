@@ -1,9 +1,11 @@
 /* src/assets/styles/base/_custom.scss  */
 
-// Typography
-
 // Color
 $color: #000;
 $bgcolor: #fff;
 $white: #fff;
 $black: #000;
+
+// Bootstrap
+$primary: #f50 !default;
+$navbar-light-active-color: $primary;

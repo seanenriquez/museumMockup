@@ -1,29 +1,14 @@
 /* src/assets/styles/components/_header.scss */
 
 .header {
-  
-  .brand {
+  .navbar-brand {
     text-transform: uppercase;
   }
+}
 
-  ul {
-    float: right;
-    li {
-      display: inline-block;
-      margin: 0 10px;
-      &.active {
-        text-decoration: underline;
-      }
-    }
-  }
-    
-  }
-  
-  /*
+/*
     Responsive
   */
-  
-  @include media-breakpoint-down(sm) {
-  
-  }
-  
+
+@include media-breakpoint-down(sm) {
+}
