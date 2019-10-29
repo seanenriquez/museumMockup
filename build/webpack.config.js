@@ -26,6 +26,11 @@ module.exports = (env) => {
     },
     devServer: {
       contentBase: path.resolve(__dirname, '../src'),
+      port: 8080,
+    },
+    performance: {
+      maxAssetSize: 512000,
+      maxEntrypointSize: 512000,
     },
     resolve: {
       extensions: ['.js', '.css', '.scss', '.pug'],

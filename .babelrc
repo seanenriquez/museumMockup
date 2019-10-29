@@ -1,0 +1,22 @@
+{
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "source": "./src",
+          "fonts": "./src/assets/fonts",
+          "icons": "./src/assets/icons",
+          "styles": "./src/assets/styles",
+          "images": "./src/assets/images",
+          "videos": "./src/assets/videos",
+          "scripts": "./src/assets/scripts",
+          "modules": "./node_modules"
+        }
+      }
+    ]
+  ]
+}
