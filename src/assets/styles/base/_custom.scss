@@ -8,4 +8,8 @@ $black: #000;
 
 // Bootstrap
 $primary: #f50 !default;
+$link-hover-color: #f70;
+
+$navbar-light-color: $black;
+$navbar-light-hover-color: $link-hover-color;
 $navbar-light-active-color: $primary;
