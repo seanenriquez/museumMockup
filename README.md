@@ -1,7 +1,7 @@
 # Frontend Boilerplate
 
-A starter kit for frontend project using Yarn, Webpack, Pug, Sass, Babel, Bootstrap, jQuery and more.
-The purpose if this webpack starter is to allow people to create websites without frameworks/libraries like React, Angular, Vue and only using simple but powerful technologies to build quality websites.
+- A starter kit for frontend project using Yarn, Webpack, Pug, Sass, Babel, Bootstrap, jQuery and more.
+- The purpose if this webpack starter is to allow people to create websites without frameworks/libraries like React, Angular, Vue and only using simple but powerful technologies to build quality websites.
 
 ## Technologies used
 
@@ -10,7 +10,7 @@ The purpose if this webpack starter is to allow people to create websites withou
 - Scripting: `jQuery or plain JavaScript`
 - JS Compiler: `Babel` (The compiler for next generation JavaScript)
 - CSS framework: `Bootstrap` (The most popular HTML, CSS, and JS library in the world)
-- Bundler: `Webpack` (A module bundler to manager all the dependencies of your website)
+- Bundler: `Webpack` (A module bundler to manager all the dependencies)
 - `Babel module resolver` configured to use alias and simplify the paths you need to import.
 - `Editorconfig` helps maintain consistent coding styles.
 - `Yarn` for fast, reliable, and secure dependency management.
@@ -61,10 +61,9 @@ The purpose if this webpack starter is to allow people to create websites withou
     - `layouts`: The main template files which contain your header and your footer.
     - `components`: The shared components to avoid repeat code.
     - `mixins`: Pieces of Pug files that are used for the same purpose of the layouts, which is to avoid repeat code in each guide template and instead use a mixing to place the same menu, share bar, page title, etc. just passing an attribute for each one.
-    - `pages`: All sub pages here. Single page will be `single.pug`, master/detail page will be `master.pug` and `master\detail.pug`.
+    - `pages`: All sub pages here.
     - `index.pug`: Home page
-- `build`: For webpack
-  - `webpack.config.js`: This is one of the most important files because it's the one that builds the production package and also the development environment, compiling the SASS and Pug files into HTML and CSS code. It also minifies all the files.
+- `webpack.config.babel.js`: This is one of the most important files because it's the one that builds the production package and also the development environment, compiling the SASS and Pug files into HTML and CSS code. It also minifies all the files.
 - `.editorconfig`: Used to set a configuration for your editor code, like use spaces instead tabs, the charset, of the files, etc.
 - `.gitignore`: Here is where you can set which files/folders shouldn't be tracked by `git`, that means, the file/folder written in this file will not be pushed to the repository such as `node_modules` and `dist` folder.
 - `.eslintrc`: ESLint configuration.
@@ -78,9 +77,8 @@ The purpose if this webpack starter is to allow people to create websites withou
 
 ## Linters
 
-- Coding standard: https://github.com/airbnb/javascript
 - Use ESLint (https://eslint.org) and Airbnb (https://www.npmjs.com/package/eslint-config-airbnb-base)
 
 ## Code Format
 
-- https://prettier.io/
+- Use Prettier (https://prettier.io)
