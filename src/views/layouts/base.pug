@@ -2,13 +2,13 @@
 block vars
 - name = 'Frontend Boilerplate'
 - bodyClass = bodyClass || ''
-- baseUrl = baseUrl || '/'
+- baseUrl = baseUrl || ''
 - title = title || 'Home page'
 - description = description || 'Webpack project starter with Pug, Sass, jQuery, Babel and Yarn'
 - keywords = keywords || 'Frontend, Boilerplate'
 - author = author || 'Spider Company Limited'
-- currentUrl = currentUrl || '/'
-- logo = '/assets/images/logo.png'
+- currentUrl = currentUrl || 'index.html'
+- logo = baseUrl + 'assets/images/logo.png'
 - url = url || 'http://localhost:8080'
 
 doctype html
@@ -51,7 +51,7 @@ html(lang="en")
     link(rel="shortcut icon", href=baseUrl + "assets/icons/favicon.ico")
 
     //- Fonts
-    link(href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap&subset=vietnamese", rel="stylesheet")
+    //- link(href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap&subset=vietnamese", rel="stylesheet")
 
   body(class=bodyClass).d-flex.flex-column
 

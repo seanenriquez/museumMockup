@@ -1,31 +1,57 @@
 // Libraries
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackNotifierPlugin = require('webpack-notifier');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-
-// Files
-const utils = require('./utils');
+import { resolve as _resolve } from 'path';
+import { ProvidePlugin } from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import WebpackNotifierPlugin from 'webpack-notifier';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import MiniCssExtractPlugin, {
+  loader as _loader,
+} from 'mini-css-extract-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import * as fs from 'fs';
 
 // Configuration
-module.exports = (env) => {
+export default (env) => {
   const nodeEnv = env.NODE_ENV;
 
+  const pages = () => {
+    const viewsFolder = _resolve(__dirname, 'src/views/pages');
+    const allPages = [];
+
+    fs.readdirSync(viewsFolder).forEach((view) => {
+      const [viewName, viewExt] = view.split(/\.(?=[^.]+$)/);
+      if (viewExt && viewExt === 'pug') {
+        const options = {
+          filename: `${viewName}.html`,
+          template: `views/pages/${view}`,
+          inject: true,
+          minify:
+            nodeEnv === 'production'
+              ? {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: true,
+              }
+              : false,
+        };
+        allPages.push(new HtmlWebpackPlugin(options));
+      }
+    });
+    return allPages;
+  };
+
   return {
-    context: path.resolve(__dirname, '../src'),
+    context: _resolve(__dirname, './src'),
     entry: {
       app: './app.js',
     },
     output: {
-      path: path.resolve(__dirname, '../dist'),
-      publicPath: '/',
+      path: _resolve(__dirname, './dist'),
+      publicPath: '',
       filename: 'assets/js/[name].[hash:7].bundle.js',
     },
     devServer: {
-      contentBase: path.resolve(__dirname, '../src'),
+      contentBase: _resolve(__dirname, './src'),
       port: 8080,
     },
     performance: {
@@ -35,12 +61,12 @@ module.exports = (env) => {
     resolve: {
       extensions: ['.js', '.css', '.scss', '.pug'],
       alias: {
-        modules: path.resolve(__dirname, '../node_modules'),
-        source: path.resolve(__dirname, '../src'),
-        images: path.resolve(__dirname, '../src/assets/images'),
-        fonts: path.resolve(__dirname, '../src/assets/fonts'),
-        styles: path.resolve(__dirname, '../src/assets/styles'),
-        scripts: path.resolve(__dirname, '../src/assets/scripts'),
+        modules: _resolve(__dirname, './node_modules'),
+        source: _resolve(__dirname, './src'),
+        images: _resolve(__dirname, './src/assets/images'),
+        fonts: _resolve(__dirname, './src/assets/fonts'),
+        styles: _resolve(__dirname, './src/assets/styles'),
+        scripts: _resolve(__dirname, './src/assets/scripts'),
       },
     },
 
@@ -69,9 +95,7 @@ module.exports = (env) => {
         {
           test: /\.(s?)css$/,
           use: [
-            nodeEnv === 'development'
-              ? 'style-loader'
-              : MiniCssExtractPlugin.loader,
+            nodeEnv === 'development' ? 'style-loader' : _loader,
             {
               loader: 'css-loader',
               options: { importLoaders: 1, sourceMap: true },
@@ -185,17 +209,15 @@ module.exports = (env) => {
       }),
 
       // pages/ folder
-      ...utils.pages(env),
+      ...pages(),
 
-      // pages/ sub folders
-      ...utils.pages(env, 'service'),
-
-      new webpack.ProvidePlugin({
+      new ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
         'window.$': 'jquery',
         'window.jQuery': 'jquery',
       }),
+
       new WebpackNotifierPlugin({
         title: 'Frontend Boilerplate',
       }),

@@ -3,10 +3,10 @@ extends ./layouts/base
 block vars
   - title = 'Homepage'
   - bodyClass = 'home-page'
-  - currentUrl = '/'
+  - currentUrl = 'index.html'
 
 block content
   main(role="main").flex-shrink-0
     .container-fluid
-      h1.page-title= name
+      h1.page-title= title
       p.lead A starter kit for frontend project using Yarn, Webpack, Pug, Sass, Babel, Bootstrap, jQuery and more.
