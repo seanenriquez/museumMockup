@@ -3,6 +3,10 @@
 .header {
   .navbar-brand {
     text-transform: uppercase;
+    img {
+      display: inline-block;
+      vertical-align: top;
+    }
   }
 }
 

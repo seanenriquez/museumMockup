@@ -1,6 +1,6 @@
 # Frontend Boilerplate
 
-- A starter kit for frontend project using Yarn, Webpack, Pug, Sass, Babel, Bootstrap, jQuery and more.
+- A starter kit for frontend project using Webpack, Pug, Sass, Babel, Bootstrap, jQuery, Yarn and more.
 - The purpose if this webpack starter is to allow people to create websites without frameworks/libraries like React, Angular, Vue and only using simple but powerful technologies to build quality websites.
 
 ## Technologies used

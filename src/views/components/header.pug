@@ -4,8 +4,8 @@ include ../mixins/all
 header.header
   nav(role="navigation", class=['navbar', 'fixed-top', 'navbar-expand-lg', 'navbar-light', 'bg-light'])
     +link(name, 'index.html')(class="navbar-brand")
-      +img(name, logo)(width="30", class="d-inline-block align-top")
-      =name
+      +img(name, logo)(width="30")
+      | Frontend
     button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbar-dropdown")
       span.navbar-toggler-icon
     #navbar-dropdown.collapse.navbar-collapse

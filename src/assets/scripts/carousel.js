@@ -1,5 +1,9 @@
 /* src/assets/scripts/carousel.js */
 
 $('.carousel').slick({
-  arrows: true,
+  arrows: false,
+  autoplay: true,
+  fade: true,
+  infinite: true,
+  speed: 250,
 });

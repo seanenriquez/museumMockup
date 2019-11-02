@@ -2,6 +2,22 @@
 
 .service-page {
   margin: 0;
+
+  ul.list {
+    list-style: none;
+    padding: 0;
+    margin: 0 15px;
+    li {
+      &::before {
+        content: '\2022';
+        position: absolute;
+        display: inline-block;
+        color: $primary;
+        width: 1rem;
+        left: 15px;
+      }
+    }
+  }
 }
 
 /*
