@@ -82,3 +82,11 @@
 ## Code Format
 
 - Use Prettier (https://prettier.io)
+
+## VS Code
+
+- EditorConfig for VS Code
+- ESLint
+- Prettier - Code formatter
+- puglint
+- scss-lint
