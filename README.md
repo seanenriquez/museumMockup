@@ -79,7 +79,7 @@
 
 - Use ESLint (https://eslint.org) and Airbnb (https://www.npmjs.com/package/eslint-config-airbnb-base)
 
-## Code Format
+## Code Formatter
 
 - Use Prettier (https://prettier.io)
 
