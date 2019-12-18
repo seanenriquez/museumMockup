@@ -1,7 +1,7 @@
 /* src/app.js */
 
 // Styles
-import 'styles/_app';
+import 'styles/_app.scss';
 
 // Libraries
 import 'bootstrap';
