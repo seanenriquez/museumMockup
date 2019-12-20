@@ -1,0 +1,10 @@
+{
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 120,
+  "editor.tabCompletion": "on",
+  "editor.formatOnPaste": true,
+  "prettier.arrowParens": "always",
+  "prettier.jsxSingleQuote": true,
+  "prettier.jsxBracketSameLine": true,
+  "prettier.packageManager": "yarn"
+}
