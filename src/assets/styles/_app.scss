@@ -1,13 +1,14 @@
 /*
   Base
 */
+@import './utils/reset';
 @import './base/fonts';
 @import './base/custom';
 
 /*
   Bootstrap
 */
-@import '~modules/bootstrap/scss/bootstrap';
+//@import '~modules/bootstrap/scss/bootstrap';
 
 /* 
   Libraries
@@ -28,7 +29,7 @@ $slick-arrow-color: $color !default;
 */
 @import './components/header';
 @import './components/footer';
-@import './components/navbar';
+@import './components/nav';
 @import './components/carousel';
 
 /*

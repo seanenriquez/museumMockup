@@ -13,3 +13,16 @@ $link-hover-color: #f70;
 $navbar-light-color: $black;
 $navbar-light-hover-color: $link-hover-color;
 $navbar-light-active-color: $primary;
+
+
+$warm-gradient: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+$cool-gradient: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+$green-gradient: linear-gradient(35deg, #81FBB8 10%, #28C76F 100%);
+$puple-gradient: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+
+$dark-purple:#34003b;
+$purple: #5f0a87;
+$shadow:rgba(0, 0, 0, 0.25);
+
+$box-shadow-light: 0px 0px 10px 0px $shadow;
+$box-shadow-medium:0px 0px 4px 2px $shadow;

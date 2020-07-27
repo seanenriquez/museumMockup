@@ -2,15 +2,3 @@
 include ../mixins/all
 
 header.header
-  nav(role="navigation", class=['navbar', 'fixed-top', 'navbar-expand-lg', 'navbar-light', 'bg-light'])
-    +link(name, 'index.html')(class="navbar-brand")
-      +img(name, logo)(width="30")
-      | Frontend
-    button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbar-dropdown")
-      span.navbar-toggler-icon
-    #navbar-dropdown.collapse.navbar-collapse
-      ul.navbar-nav
-        +nav-item('Home', 'index.html')
-        +nav-item('About', 'about.html')
-        +nav-item('Service', 'service.html')
-        +nav-item('Contact', 'contact.html')

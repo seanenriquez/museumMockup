@@ -52,7 +52,7 @@ export default (env) => {
     },
     devServer: {
       contentBase: _resolve(__dirname, './src'),
-      port: 8080,
+      port: 9080,
     },
     performance: {
       maxAssetSize: 512000,

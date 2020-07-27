@@ -10,7 +10,11 @@
   "rules": {
     "import/no-unresolved": 0,
     "global-require": 0,
+    "semi": "off",
+    "indent":"tabs",
+    "no-tabs":"off",
     "no-console": "off",
+    "linebreak-style": 0,
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
   }
 }

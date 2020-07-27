@@ -1,68 +1,70 @@
 //- base layout
 block vars
-- name = 'Frontend'
+- name = 'Life Site'
 - bodyClass = bodyClass || ''
 - baseUrl = baseUrl || ''
 - title = title || 'Home page'
-- description = description || 'A starter kit for frontend project using Webpack, Pug, Sass, Babel, Bootstrap, jQuery, Yarn and more.'
-- keywords = keywords || 'Frontend, Boilerplate'
-- author = author || 'Spider Company Limited'
+- description = description || 'A website about finding hapiness'
+- keywords = keywords || 'Life,happiness, contentness'
+- author = author || 'Sean Enriquez'
 - currentUrl = currentUrl || 'index.html'
 - logo = baseUrl + 'assets/images/logo.png'
-- url = url || 'http://localhost:8080'
+- url = url || 'http://localhost:9080'
 
 doctype html
 html(lang="en")
-  head
+	head
 
-    //- Meta
-    meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    title=title
-    meta(name="description", content=description)
-    meta(name="keywords", content=keywords)
-    meta(name="author", content=author)
+		//- Meta
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		title=title
+		meta(name="description", content=description)
+		meta(name="keywords", content=keywords)
+		meta(name="author", content=author)
 
-    //- Twitter
-    meta(name='twitter:card', content='summary')
-    meta(name='twitter:site', content=title)
-    meta(name='twitter:image', content=logo)
-    meta(name='twitter:description', content=description)
+		//- Twitter
+		meta(name='twitter:card', content='summary')
+		meta(name='twitter:site', content=title)
+		meta(name='twitter:image', content=logo)
+		meta(name='twitter:description', content=description)
 
-    //- Facebook
-    meta(property='og:url', content=url)
-    meta(property='og:title', content=title)
-    meta(property='og:description', content=description)
-    meta(property='og:image', content=logo)
-    meta(property='og:type', content='website')
+		//- Facebook
+		meta(property='og:url', content=url)
+		meta(property='og:title', content=title)
+		meta(property='og:description', content=description)
+		meta(property='og:image', content=logo)
+		meta(property='og:type', content='website')
 
-    //- Meta
-    meta(name="robots", content="index, follow")
-    meta(name="theme-color", content="#ff9900")
-    meta(name="msapplication-TileColor", content="#ff9900")
-    meta(name="msapplication-config" content=baseUrl + "browserconfig.xml")
-    link(rel="manifest", href=baseUrl + "manifest.json")
+		//- Meta
+		meta(name="robots", content="index, follow")
+		meta(name="theme-color", content="#ff9900")
+		meta(name="msapplication-TileColor", content="#ff9900")
+		meta(name="msapplication-config" content=baseUrl + "browserconfig.xml")
+		link(rel="manifest", href=baseUrl + "manifest.json")
 
-    //- Favicons
-    link(rel="apple-touch-icon", sizes="180x180", href=baseUrl + "assets/icons/apple-touch-icon.png")
-    link(rel="icon", type="image/png", sizes="32x32", href=baseUrl + "assets/icons/favicon-32x32.png")
-    link(rel="icon", type="image/png", sizes="16x16", href=baseUrl + "assets/icons/favicon-16x16.png")
-    link(rel="shortcut icon", href=baseUrl + "assets/icons/favicon.ico")
+		//- Favicons
+		link(rel="apple-touch-icon", sizes="180x180", href=baseUrl + "assets/icons/apple-touch-icon.png")
+		link(rel="icon", type="image/png", sizes="32x32", href=baseUrl + "assets/icons/favicon-32x32.png")
+		link(rel="icon", type="image/png", sizes="16x16", href=baseUrl + "assets/icons/favicon-16x16.png")
+		link(rel="shortcut icon", href=baseUrl + "assets/icons/favicon.ico")
 
-    //- Fonts
-    //- link(href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap&subset=vietnamese", rel="stylesheet")
+		//- Fonts
+		//- link(href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap&subset=vietnamese", rel="stylesheet")
 
-  body(class=bodyClass).d-flex.flex-column
+	body(class=bodyClass).d-flex.flex-column
+		//- Nav
+		include ../components/nav.pug
+		
+		//- Header
+		include ../components/header.pug
 
-    //- Header
-    include ../components/header.pug
+		//- block content
+		block content
 
-    //- block content
-    block content
+		//- Footer
+		include ../components/footer.pug
 
-    //- Footer
-    include ../components/footer.pug
-
-    //- block scripts
-    block scripts
+		//- block scripts
+		block scripts
