@@ -11,7 +11,7 @@
     "import/no-unresolved": 0,
     "global-require": 0,
     "semi": "off",
-    "indent":"tabs",
+    "indent":"off",
     "no-tabs":"off",
     "no-console": "off",
     "linebreak-style": 0,
