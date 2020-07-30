@@ -56,3 +56,26 @@ h4 {
 
 $quicksand: 'Quicksand', sans-serif;
 */
+
+@font-face {
+	font-family: 'JosefinSans';
+	font-weight: normal;
+	src: url('/assets/fonts/JosefinSans-Regular.tff');
+}
+
+@font-face {
+	font-family: 'JosefinSans';
+	font-weight: bold;
+	src: url('/assets/fonts/JosefinSans-Bold.tff');
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	font-weight: normal;
+	src: url('/assets/fonts/Montserrat-Regular.tff');
+}
+@font-face {
+	font-family: 'Montserrat';
+	font-weight: Bold;
+	src: url('/assets/fonts/Montserrat-Bold.tff');
+}
