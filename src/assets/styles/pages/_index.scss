@@ -26,11 +26,17 @@
 	}
 
 	&__video {
-
 		video {
 			width: 100%;
 			border: $dark-thick-border;
 		}
+	}
+
+	&__background {
+		position: absolute;
+		top:0;
+		left:-50px;
+		z-index: -10;
 	}
 
 	@include respond-to('small') {
@@ -192,7 +198,7 @@
 
 			&__picture {
 				position: absolute;
-				z-index: -100;
+				z-index: -2;
 
 				&::after {
 					content: ""; // ::before and ::after both require content
