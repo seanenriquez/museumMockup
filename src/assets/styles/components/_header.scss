@@ -1,13 +1,8 @@
 /* src/assets/styles/components/_header.scss */
 
 .header {
-  .navbar-brand {
-    text-transform: uppercase;
-    img {
-      display: inline-block;
-      vertical-align: top;
-    }
-  }
+	height: 100px;
+	z-index: 10;
 }
 
 /*

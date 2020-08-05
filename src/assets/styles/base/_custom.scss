@@ -5,12 +5,16 @@ $color: #000;
 $bgcolor: #fff;
 $white: #fff;
 $black: #000;
+$seafoam: #57E6B8;
+$darkBlue: #002432;
+$orange: #FF5301;
+
 
 // Bootstrap
 $primary: #f50;
 $link-hover-color: #f70;
 
-$navbar-light-color: $black;
+$nav-bg: $seafoam;
 $navbar-light-hover-color: $link-hover-color;
 $navbar-light-active-color: $primary;
 
@@ -26,3 +30,31 @@ $shadow:rgba(0, 0, 0, 0.25);
 
 $box-shadow-light: 0px 0px 10px 0px $shadow;
 $box-shadow-medium:0px 0px 4px 2px $shadow;
+
+
+
+
+//borders
+$dark-thick-border:4px solid $darkBlue;
+
+//backgrounds 
+
+.bg {
+	&-orange{
+		background-color: $orange;
+	}
+	&-darkBlue{
+		background-color: $darkBlue;
+		color:white;
+	}
+	&-seafoam{
+		background-color: $seafoam;
+	}
+	&-white{
+		background-color: $white;
+	}
+}
+
+.no-scroll {
+	overflow: hidden;
+}

@@ -1,20 +1,60 @@
 extends ./layouts/base
 
 block vars
-  - title = 'Homepage'
-  - bodyClass = 'home-page'
-  - currentUrl = 'index.html'
-
+	- title = 'Homepage'
+	- bodyClass = 'home-page'
+	- currentUrl = 'index.html'
+	- videoUrl = '../assets/videos/splash_video.mp4'
 block content
-  main(role="main").flex-shrink-0
-    .container-fluid
-      h1.page-title= title
-      p.lead A starter kit for frontend project using Webpack, Pug, Sass, Babel, Bootstrap, jQuery, Yarn and more.
-      .carousel
-        h5 Frontend Boilerplate
-        h5 Bundler: Webpack
-        h5 JS Compiler: Babel
-        h5 CSS framework: Bootstrap
-        h5 Templating: Pug
-        h5 Styling: Sass
-        h5 Scripting: jQuery or plain JavaScript
+	main(role="main")
+		section.splash
+			.splash__header.bg-orange
+				h3.bold DETE @ Home 
+			.splash__events.bg-white
+				h3 Upcomming Events
+				.events
+					.events__item
+						.event__item--photo
+							img(src="https://via.placeholder.com/120", alt="")
+						.event__item--caption
+							p.bold Leimert Park Live!
+							p.text-secondary Jul 30 | 7pm
+					.events__item
+						.event__item--photo
+							img(src="https://via.placeholder.com/120", alt="")
+						.event__item--caption
+							p.bold Leimert Park Live!
+							p.text-secondary Jul 30 | 7pm
+			.splash__video
+				video(src=videoUrl autoplay="true" loop="true")
+			.splash__item--animatedBackground
+		+hr('right','orange')
+		section.exhibitions
+			h1.exhibitions__header Exhibitions
+			a(href="./").showcase
+				.showcase__info.bg-orange
+					h2.showcase__title Klark Smith
+					.showcase__details
+						p.highlight New Exhibit
+						p abstract oil paint collection
+				.showcase__arrow--orange
+				.showcase__picture.bg-orange
+					img(src="../assets/content/artists/artist_1/art/1.jpg", alt="")
+			a(href="./").showcase.showcase--inverse
+				.showcase__info.bg-seafoam
+					h2.showcase__title Traditional Japanese Artwrok 
+					.showcase__details
+						p.highlight New Exhibit	 
+						p A collection of traditional Japanese illustrations from the Azuchi-Momoyama peroid.
+				.showcase__arrow--seafoam
+				.showcase__picture.bg-seafoam
+					img(src="../assets/content/artists/artist_3/art/1.jpg", alt="")
+			a(href="./").showcase
+				.showcase__info.bg-darkBlue
+					h2.showcase__title Kaylee Hauss 
+					.showcase__details
+						p Moroccan life photography 
+				.showcase__arrow--darkBlue
+				.showcase__picture.bg-darkBlue
+					img(src="../assets/content/artists/artist_4/art/5.jpg", alt="")
+		+hr('left','seafoam')

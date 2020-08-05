@@ -1,30 +1,5 @@
 /* src/assets/styles/base/_fonts.scss  */
 
-html {
-  font-size: calc(1rem + .33vw)
-}
-
-h1 {
-  font-size: 4rem;
-}
-
-h2 {
-  font-size: 3rem;
-}
-
-h3 {
-  font-size: 2.5rem;
-}
-
-h4 {
-  font-size: 2rem;
-}
-
-.text-secondary {
-  font-size: .8rem;
-  color: rgba($color: #000000, $alpha: .9)
-}
-
 /*
   Quicksand
 */
@@ -60,22 +35,64 @@ $quicksand: 'Quicksand', sans-serif;
 @font-face {
 	font-family: 'JosefinSans';
 	font-weight: normal;
-	src: url('/assets/fonts/JosefinSans-Regular.tff');
+	src: url('/assets/fonts/JosefinSans-Regular.ttf');
 }
 
 @font-face {
 	font-family: 'JosefinSans';
 	font-weight: bold;
-	src: url('/assets/fonts/JosefinSans-Bold.tff');
+	src: url('/assets/fonts/JosefinSans-Bold.ttf');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-weight: normal;
-	src: url('/assets/fonts/Montserrat-Regular.tff');
+	src: url('/assets/fonts/Montserrat-Regular.ttf');
 }
 @font-face {
 	font-family: 'Montserrat';
 	font-weight: Bold;
-	src: url('/assets/fonts/Montserrat-Bold.tff');
+	src: url('/assets/fonts/Montserrat-Bold.ttf');
+}
+
+html {
+	font-size: calc(1rem + .33vw)
+}
+
+body {
+	font-family: 'Montserrat';
+	font-weight: normal;
+}
+
+h1,h2,h3,h4 {
+	font-family: 'JosefinSans';
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.6rem;
+}
+
+h3 {
+	font-size: 1.3rem;
+}
+
+// h4 {
+// 	font-size: 1.2rem;
+// }
+
+.text-secondary {
+	font-size: .8rem;
+	color: rgba($color: #000000, $alpha: .9)
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.highlight {
+	text-decoration:underline;
 }

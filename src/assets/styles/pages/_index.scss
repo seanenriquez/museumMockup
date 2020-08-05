@@ -1,12 +1,245 @@
 /* src/assets/styles/pages/_index.scss  */
 
 .home-page {
-  margin: 0;
+	margin: 0;
 }
 
-/*
-  Responsive
-*/
+.splash {
+	width: 100%;
 
-// @include media-breakpoint-down(sm) {
-// }
+	&__header {
+		width: 100%;
+		color: white;
+		text-align: center;
+		padding: 15px 0 15px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+	}
+
+	&__events {
+		display: flex;
+		flex-direction: column;
+		padding: 20px 0 20px;
+
+	}
+
+	&__video {
+
+		video {
+			width: 100%;
+			border: $dark-thick-border;
+		}
+	}
+
+	@include respond-to('small') {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 2fr 4fr;
+		grid-template-rows: 1fr 4fr;
+		grid-gap: 1rem;
+
+		&__header {
+			border: $dark-thick-border;
+		}
+
+		&__events {
+			padding: 10px;
+			justify-content: space-evenly;
+			grid-row: 2/3;
+			border: $dark-thick-border;
+		}
+
+		&__video {
+			grid-row: 1/3;
+		}
+	}
+
+
+	@include respond-to('medium') {
+		width: 85vw;
+	}
+}
+
+.events {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+
+
+
+	@include respond-to('small') {
+		align-self: center;
+
+		&__item {
+			padding: 5px;
+		}
+	}
+}
+
+
+.exhibitions {
+	display: flex;
+	flex-direction: column;
+
+	a {
+		text-decoration: none;
+		color: unset;
+	}
+
+	&__header {
+		text-align: center;
+		padding:1rem 0 1rem;
+		@include respond-to('small') {
+			z-index: 2;
+			position: relative;
+			top: 2rem;
+			line-height: 4rem;
+			/* left: 100px; */
+			/* text-align: center; */
+			background: white;
+			width: fit-content;
+			padding:0 1rem 0 1rem;
+			border: $dark-thick-border;
+			margin: auto;
+		}
+	}
+
+	.showcase {
+		width: 100%;
+		display: flex;
+		flex-direction: column-reverse;
+
+		&__info {
+			width: 90%;
+			top: -2rem;
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 1rem;
+		}
+
+		&__picture {
+			width: 100%;
+
+			img {
+				height: 200px;
+				width: 100%;
+				display: block;
+				object-fit: cover;
+			}
+		}
+
+
+
+		%__arrow {
+			transform-origin: left;
+			transition: 500ms ease-in-out;
+			transform: scaleX(0);
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-top: 100px solid transparent;
+			border-bottom: 100px solid transparent;
+			border-left: 100px solid currentColor;
+
+		}
+
+
+		&__arrow {
+			&--orange {
+				@extend %__arrow;
+				color: $orange;
+			}
+
+			&--darkBlue {
+				@extend %__arrow;
+				color: $darkBlue
+			}
+
+			&--seafoam {
+				@extend %__arrow;
+				color: $seafoam
+			}
+
+		}
+
+		@include respond-to('small') {
+
+			flex-direction: row;
+
+			&.showcase--inverse {
+				flex-direction: row-reverse;
+
+				.showcase__info {
+					text-align: right;
+				}
+
+				.showcase__arrow--seafoam {
+					width: 0;
+					height: 0;
+					transform-origin: right;
+					border-right: none;
+					border-bottom: 100px solid currentColor;
+					border-top: 100px solid currentColor;
+					border-left: 100px solid transparent;
+				}
+
+			}
+
+			&__picture {
+				position: absolute;
+				z-index: -100;
+
+				&::after {
+					content: ""; // ::before and ::after both require content
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-image: linear-gradient(120deg, $orange, $seafoam);
+					opacity: 0;
+					mix-blend-mode: hard-light;
+
+				}
+			}
+
+			&__info {
+				line-height: 1;
+				top: 0;
+				margin: 0px;
+				max-width: 50%;
+				width: fit-content;
+			}
+
+			div[class^="showcase__arrow"] {
+
+				position: relative;
+			}
+
+			//this is kind of redundent but can't figure out a more elegant solution
+			&:hover {
+				div[class^="showcase__arrow"] {
+					transform: scaleX(1);
+				}
+
+				.showcase__picture {
+					&:after {
+						opacity: .5;
+					}
+				}
+
+			}
+
+
+		}
+
+
+
+	}
+
+}

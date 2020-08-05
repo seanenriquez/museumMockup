@@ -1,15 +1,46 @@
 nav.main-nav
-	.main-nav__menu
-		.hamburger.hamburger__arrow
-			.hamburger__box
-				.hamburger__inner
-		.main-nav__hideaway
-			a(href="/").main-nav__link 
-				.main-nav__link-inner Home
-			a(href="work").main-nav__link 
-				.main-nav__link-inner Work
-			a(href="about").main-nav__link 
-				.main-nav__link-inner About 
-			a(href="contact").main-nav__link 
-				.main-nav__link-inner Contact
+	.main-nav__title
+		a(href="/").main-nav__title--inner
+			h3
+				| DETE
+				br
+				.main-nav__title--subtitle Museum
+	.tickets
+		.tickets__button Tickets	
+	.hamburger(tabindex="0" aria-pressed="false")
+		.hamburger__box
+			.hamburger__inner
+	.main-nav__menu(aria-expanded="false")
+		a(href="/").main-nav__link
+			.main-nav__inner Take a Visit	
+		a(href="/").main-nav__link
+			.main-nav__inner Exhibitions 
+		a(href="/").main-nav__link
+			.main-nav__inner Events 
+		a(href="/").main-nav__link
+			.main-nav__inner About
+	//- .main-nav__menu--hidden
+	//- 	a(href="/").main-nav__link
+	//- 		.main-nav__inner Take a Visit	
+	//- 	a(href="/").main-nav__link
+	//- 		.main-nav__inner Exhibitions 
+	//- 	a(href="/").main-nav__link
+	//- 		.main-nav__inner Events 
+	//- 	a(href="/").main-nav__link
+	//- 		.main-nav__inner About
+
+
+
+		//- .hamburger.hamburger__arrow
+		//- 	.hamburger__box
+		//- 		.hamburger__inner
+		//- .main-nav__hideaway
+		//- 	a(href="/").main-nav__link 
+		//- 		.main-nav__link-inner Home
+		//- 	a(href="work").main-nav__link 
+		//- 		.main-nav__link-inner Work
+		//- 	a(href="about").main-nav__link 
+		//- 		.main-nav__link-inner About 
+		//- 	a(href="contact").main-nav__link 
+		//- 		.main-nav__link-inner Contact
 				
