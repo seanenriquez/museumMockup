@@ -1,0 +1,13 @@
+	.wave__background {
+		overflow: visible;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -10;
+
+		.splash_bg {
+			left: -20%;
+			position: relative;
+			overflow: visible;
+		}
+	}

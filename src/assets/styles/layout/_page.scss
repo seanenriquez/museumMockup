@@ -1,5 +1,9 @@
 /* src/assets/styles/layout/_page.scss  */
 
+main {
+	overflow: hidden;
+}
+
 .page-break {
 	//background-image: url(../svg/hr.svg);
 	border:none;

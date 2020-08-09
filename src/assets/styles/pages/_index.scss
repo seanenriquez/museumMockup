@@ -4,6 +4,7 @@
 	margin: 0;
 }
 
+
 .splash {
 	width: 100%;
 
@@ -32,12 +33,7 @@
 		}
 	}
 
-	&__background {
-		position: absolute;
-		top:0;
-		left:-50px;
-		z-index: -10;
-	}
+
 
 	@include respond-to('small') {
 		margin-left: auto;

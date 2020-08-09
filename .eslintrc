@@ -1,20 +1,23 @@
 {
-  "root": true,
-  "extends": "airbnb-base",
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true,
-    "jquery": true
-  },
-  "rules": {
-    "import/no-unresolved": 0,
-    "global-require": 0,
-    "semi": "off",
-    "indent":"off",
-    "no-tabs":"off",
-    "no-console": "off",
-    "linebreak-style": 0,
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
-  }
+	"root": true,
+	"extends": "airbnb-base",
+	"env": {
+		"browser": true,
+		"node": true,
+		"es6": true,
+		"jquery": true
+	},
+	"rules": {
+		"import/no-unresolved": 0,
+		"max-len": "off",
+		"global-require": 0,
+		"semi": "off",
+		"indent": "off",
+		"no-tabs": "off",
+		"no-console": "off",
+		"linebreak-style": 0,
+		"import/no-extraneous-dependencies": ["error", {
+			"devDependencies": true
+		}]
+	}
 }
