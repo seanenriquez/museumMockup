@@ -32,40 +32,43 @@
 $quicksand: 'Quicksand', sans-serif;
 */
 
-@font-face {
-	font-family: 'JosefinSans';
-	font-weight: normal;
-	src: url('/assets/fonts/JosefinSans-Regular.ttf');
-}
+// @font-face {
+// 	font-family: 'JosefinSans';
+// 	font-weight: normal;
+// 	src: url('https://fonts.googleapis.com/css?family=JosefinSans:400,700');
+// }
 
-@font-face {
-	font-family: 'JosefinSans';
-	font-weight: bold;
-	src: url('/assets/fonts/JosefinSans-Bold.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
-@font-face {
-	font-family: 'Montserrat';
-	font-weight: normal;
-	src: url('/assets/fonts/Montserrat-Regular.ttf');
-}
-@font-face {
-	font-family: 'Montserrat';
-	font-weight: Bold;
-	src: url('/assets/fonts/Montserrat-Bold.ttf');
-}
+// @font-face {
+// 	font-family: 'JosefinSans';
+// 	font-weight: bold;
+// 	src: url('/fonts/JosefinSans-Bold.ttf');
+// }
+
+// @font-face {
+// 	font-family: 'Montserrat';
+// 	font-weight: normal;
+// 	src: url("https://fonts.googleapis.com/css?family=Montserrat:400");
+// }
+// @font-face {
+// 	font-family: 'Montserrat';
+// 	font-weight: Bold;
+// 	src: url("https://fonts.googleapis.com/css?family=Montserrat:700);
+// }
 
 html {
 	font-size: calc(1rem + .33vw)
 }
 
 body {
-	font-family: 'Montserrat';
+	font-family: 'Montserrat',sans-serif;
 	font-weight: normal;
+	color:$color-secondary-mid;
 }
 
 h1,h2,h3,h4 {
-	font-family: 'JosefinSans';
+	font-family: 'Josefin Sans',sans-serif;
 }
 
 h1 {
@@ -95,4 +98,8 @@ h3 {
 
 .highlight {
 	text-decoration:underline;
+}
+
+.text-muted {
+	color: $grey-mid;
 }

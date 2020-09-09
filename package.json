@@ -52,6 +52,7 @@
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
+    "server": "^1.0.30",
     "slick-carousel": "^1.8.1"
   }
 }

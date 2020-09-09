@@ -10,7 +10,7 @@ $is-active: null;
 	}
 
 	width: 100%;
-	background-color: $seafoam;
+	background-color: $color-tertiary;
 	position: fixed;
 	display: flex;
 	flex-direction: row;
@@ -37,7 +37,7 @@ $is-active: null;
 	&__menu {
 		display: none;
 		&[aria-expanded="true"] {
-			background-color: $seafoam;
+			background-color: $color-tertiary;
 			display: flex;
 			flex-direction: column;
 			justify-items: space-evenly;

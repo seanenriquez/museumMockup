@@ -1,5 +1,43 @@
 //- src/views/components/footer.pug
 
-footer.footer.bg-light.mt-auto.py-3
-  .container-fluid
-    span.text-muted Copyright &copy; 2015-2019 Spider Company Limited.
+footer
+	.footer
+		.footer__logo-and-address
+			.footer__logo
+				h1
+					| DETE
+					br
+					| Museum
+			.footer__address
+				address
+					b Dete Museum of Art
+					br
+					| 123 Robbin Street
+					br
+					| New York, NY 10311
+					br
+					a(href="tel:(555)555-3600")
+						|(555) 555-3600
+		.footer__links-and-signup
+			.footer__links
+				ul.list-links
+					a(href="/visit")
+						li Visit
+					a(href="/exhibitions")
+						li Exhibitions
+					a(href="/events")
+						li Events
+					a(href="/about")
+						li About
+				ul.list-links.text-muted
+					a(href="/contact-us")
+						li Contact Us
+					a(href="/press")
+						li Press
+					a(href="/images-and-permissions")
+						li Images & Permissions
+					a(href="/terms-and-Conditions")
+						li Terms & Conditions
+			.footer__news-letter-signup
+				+singleForm('E-Mail','Join','E-mail Address','Subscribe to the DETE Museum newsletter')
+		span.footer__legal.text-muted Copyright &copy; 2015-2019 Spider Company Limited.

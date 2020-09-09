@@ -26,7 +26,7 @@ export default (env) => {
           template: `views/pages/${view}`,
           inject: true,
           minify:
-            nodeEnv === 'production'
+            nodeEnv === 'productio n'
               ? {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -62,7 +62,8 @@ export default (env) => {
       extensions: ['.js', '.css', '.scss', '.pug'],
       alias: {
         modules: _resolve(__dirname, './node_modules'),
-        source: _resolve(__dirname, './src'),
+	   source: _resolve(__dirname, './src'),
+	   content: _resolve(__dirname, './src/assets/content'),
         images: _resolve(__dirname, './src/assets/images'),
         fonts: _resolve(__dirname, './src/assets/fonts'),
         styles: _resolve(__dirname, './src/assets/styles'),
@@ -136,7 +137,15 @@ export default (env) => {
             limit: 3000,
             name: 'assets/images/[name].[ext]',
           },
-        },
+	   },
+		{
+			test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+			loader: 'url-loader',
+			options: {
+				limit: 3000,
+				name: 'assets/content/[name].[ext]',
+			},
+		},
         {
           test: /\.(mp4|ogg)(\?.*)?$/,
           loader: 'url-loader',
@@ -179,7 +188,8 @@ export default (env) => {
         { from: '../manifest.json', to: 'manifest.json' },
         { from: '../browserconfig.xml', to: 'browserconfig.xml' },
         { from: 'assets/icons', to: 'assets/icons' },
-        { from: 'assets/fonts', to: 'assets/fonts' },
+	   { from: 'assets/fonts', to: 'assets/fonts' },
+	   { from: 'assets/content', to: 'assets/content' },
         { from: 'assets/images', to: 'assets/images' },
         { from: 'assets/videos', to: 'assets/videos' },
       ]),

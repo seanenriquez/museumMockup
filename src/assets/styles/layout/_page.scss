@@ -5,50 +5,66 @@ main {
 }
 
 .page-break {
-	//background-image: url(../svg/hr.svg);
-	border:none;
-	height:5rem;
+	border: none;
+	height: 3rem;
 	width: 100%;
 	opacity: .3;
 	position: relative;
-	top:-10rem;
+	top: -10rem;
 	z-index: -1000;
+
 	&.left {
-		left:-30%;
+		left: -30%;
 	}
 
 	&.right {
-		right:-30%;
+		right: -30%;
 	}
 
 	.svg-container {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		svg {
-		overflow: visible;
-		width: 100%;
-		position: absolute;
-		polyline {
-			
-			fill: none;
-		//	stroke:$seafoam;
-			stroke-width: 100px;
-		}
-	}
-	}
+		// position: absolute;
+		// top: 0;
+		// left: 0;
+		// width: 100%;
+		// height: 100%;
 
-	
-	
-		@include respond-to('small') {
-			height: 10rem;
-			top:-5rem;
-			&__img{
-				position: relative;
+		svg {
+			overflow: visible;
+			width: 100%;
+			position: absolute;
+
+			polyline {
+				fill: none;
+				stroke-width: 100px;
 			}
 		}
+	}
+
+	.primary{
+		stroke:blue;	
+	}
+
+
+
+	@include respond-to('small') {
+		height: 6rem;
+		top: -5rem;
+
+		&__img {
+			position: relative;
+		}
+	}
+}
+
+
+
+
+ul.list-links {
+	list-style-type: none;
+	padding:1rem;
+	 &--muted {
+		opacity: $grey-mid;
+	 }
 }
 
 /*

@@ -13,4 +13,6 @@ $(document).ready(() => {
 	require('scripts/nav');
 	require('scripts/carousel');
 	require('scripts/splashBackgroundAnime');
+	require('scripts/googlemap.js');
+	require('scripts/drag-scroll.js')
 });

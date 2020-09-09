@@ -9,14 +9,22 @@ $seafoam: #57E6B8;
 $darkBlue: #002432;
 $orange: #FF5301;
 
+$color-primary:#DD4E1F;
+$color-primary-mid:#C65331;
 
-// Bootstrap
-$primary: #f50;
-$link-hover-color: #f70;
+$color-secondary:#00394F;
+$color-secondary-mid: #003042;
+$color-secondary-light:#004F6E;
 
-$nav-bg: $seafoam;
-$navbar-light-hover-color: $link-hover-color;
-$navbar-light-active-color: $primary;
+$color-tertiary: #46DBAF;
+$color-tertiary-mid:#32AD94;
+$color-tertiary-light:#4FF0ba;
+
+$grey-light: #c4c4c4;
+$grey-mid: #818181;
+$grey-dark: #1d1d1d;
+
+$nav-bg: $color-tertiary;
 
 
 $warm-gradient: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
@@ -35,20 +43,20 @@ $box-shadow-medium:0px 0px 4px 2px $shadow;
 
 
 //borders
-$dark-thick-border:4px solid $darkBlue;
+$dark-thick-border:4px solid $color-secondary;
 
 //backgrounds 
 
 .bg {
-	&-orange{
-		background-color: $orange;
+	&-primary{
+		background-color: $color-primary;
 	}
-	&-darkBlue{
-		background-color: $darkBlue;
+	&-secondary{
+		background-color: $color-secondary;
 		color:white;
 	}
-	&-seafoam{
-		background-color: $seafoam;
+	&-tertiary{
+		background-color: $color-tertiary;
 	}
 	&-white{
 		background-color: $white;
@@ -57,4 +65,15 @@ $dark-thick-border:4px solid $darkBlue;
 
 .no-scroll {
 	overflow: hidden;
+}
+
+
+a {
+	color:currentColor;
+	text-decoration-color: $seafoam;
+
+	&:hover {
+		color:$seafoam;
+		text-decoration-color: white;
+	}
 }

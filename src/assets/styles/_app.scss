@@ -2,8 +2,9 @@
   Base
 */
 @import './utils/reset';
-@import './base/fonts';
 @import './base/custom';
+@import './base/fonts';
+
 
 /*
   Bootstrap
@@ -32,6 +33,9 @@ $slick-arrow-color: $color !default;
 @import './components/nav';
 @import './components/carousel';
 @import './components/wave-background';
+@import'./components/single-form';
+@import'./components/news-letter';
+@import'./components/info-box';
 
 /*
   Layout

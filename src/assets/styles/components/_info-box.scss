@@ -1,0 +1,40 @@
+.info-box {
+	background-color: $color-secondary;
+	color: white;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	&__button {
+		height: 0;
+
+		button {
+			border: $dark-thick-border;
+			background-color: $color-primary;
+			color: white;
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+	}
+
+	&__content {
+		
+		display: flex;
+		flex-direction: column;
+		margin-bottom: auto;
+	}
+
+	&__item {
+		padding: .7rem;
+	}
+
+	@include respond-to('small') {
+		text-align: left;
+		margin-bottom: 0;
+		&__content {
+			flex-direction: row;
+		}
+
+	}
+}

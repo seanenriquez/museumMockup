@@ -5,10 +5,11 @@ block vars
 	- bodyClass = 'home-page'
 	- currentUrl = 'index.html'
 	- videoUrl = '../assets/videos/splash_video.mp4'
+	- circlesBackground = '../assets/svg/background_circles.svg'
 block content
 	main(role="main")
 		section.splash
-			.splash__header.bg-orange
+			.splash__header.bg-primary
 				h3.bold DETE @ Home 
 			.splash__events.bg-white
 				h3 Upcomming Events
@@ -26,35 +27,109 @@ block content
 							p.bold Leimert Park Live!
 							p.text-secondary Jul 30 | 7pm
 			.splash__video
-				video(src=videoUrl autoplay="true" loop="true")
+				video(src=videoUrl autoplay="false" loop="true")
 			.wave__background
 				include ../assets/svg/splash_bg.svg
+
 		section.exhibitions
 			h1.exhibitions__header Exhibitions
-			a(href="./").showcase
-				.showcase__info.bg-orange
+			a(href="./pages/exhibition-klark.html").showcase
+				.showcase__info.bg-primary
 					h2.showcase__title Klark Smith
 					.showcase__details
 						p.highlight New Exhibit
 						p abstract oil paint collection
-				.showcase__arrow--orange
-				.showcase__picture.bg-orange
-					img(src="../assets/content/artists/artist_1/art/1.jpg", alt="")
+				.showcase__arrow--primary
+				.showcase__picture.bg-primary
+					img(src="assets/content/artists/artist_1/art/1.jpg", alt="")
 			a(href="./").showcase.showcase--inverse
-				.showcase__info.bg-seafoam
+				.showcase__info.bg-tertiary
 					h2.showcase__title Traditional Japanese Artwrok 
 					.showcase__details
 						p.highlight New Exhibit	 
 						p A collection of traditional Japanese illustrations from the Azuchi-Momoyama peroid.
-				.showcase__arrow--seafoam
-				.showcase__picture.bg-seafoam
-					img(src="../assets/content/artists/artist_3/art/1.jpg", alt="")
+				.showcase__arrow--tertiary.showcase__arrow--inverse
+				.showcase__picture.bg-tertiary
+					img(src="assets/content/artists/artist_3/art/1.jpg", alt="")
 			a(href="./").showcase
-				.showcase__info.bg-darkBlue
+				.showcase__info.bg-secondary
 					h2.showcase__title Kaylee Hauss 
 					.showcase__details
 						p Moroccan life photography 
-				.showcase__arrow--darkBlue
-				.showcase__picture.bg-darkBlue
-					img(src="../assets/content/artists/artist_4/art/5.jpg", alt="")
-		+hr('left',seafoam)
+				.showcase__arrow--secondary
+				.showcase__picture.bg-secondary
+					img(src="assets/content/artists/artist_4/art/5.jpg", alt="")
+		+hr('left',colorPrimary) 
+		section.news-letter-and-schedule
+			.news-letter
+				h3.news-letter__title Join our monthly newsletter
+				.news-letter__info
+					ul
+						li Latest updates about new exhibits and events.
+						li Coupns for day passes and DETE merchandise.
+						li Access to virtual exhibits.
+						li And more!
+				.news-letter__form
+					+singleForm('E-Mail','Join','E-mail Address')
+			.info-box
+				h3.info-box__title Daily rates and hours
+				.info-box__content
+					.info-box__item
+						b 
+							u M-F
+						br
+						b Open 9am to 8pm
+						br
+						| Adults: $12
+						br
+						| Children & Seniors: Free	
+					.info-box__item
+						b
+							u Sa-Su 
+						br
+						b Open 10am to 8pm
+						br
+						| Adults: $8
+						br
+						| Children & Seniors: Free
+				.info-box__button 
+					button Buy Tickets
+
+		section.directions
+			h1.directions__header Directions
+			<iframe class="directions__google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.967350157747!2d-73.7713667845341!3d42.66204727916775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89de0a35d0eef973%3A0x39d103e5cceb545b!2sRobin%20St%2C%20Albany%2C%20NY!5e0!3m2!1sen!2sus!4v1599552201401!5m2!1sen!2sus"  frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
+		+hr('right',colorSecondary)
+
+		section.performance-and-shopping
+			.performance-and-shopping__background-SVG
+				include ../assets/svg/background_circles.svg
+			.performance
+				.performance__info-box.info-box
+					h3.info-box__title Live Performances
+					.info-box__content
+						| Learn more about upcomming live performances at the museum.
+					.info-box__button
+						button View All
+				.performance__showcase
+					.performance__image-info-overlay.performance__image-info-overlay--first.bg-primary
+						| A chance to meet the artists behind the work and contribute to their display.
+					.performance__image-info-overlay.performance__image-info-overlay--second.bg-secondary
+						| Experience being apart of a performance piece
+					img(src="assets/images/performance-showcase.jpg").performance__image
+			.card-carousel
+				.card-carousel__item
+					img(src="assets/images/merch/merch-baked-goods.jpg").card-carousel__image
+					.card-carousel__title Try something sweet
+					button.card-carousel__button View 
+				.card-carousel__item
+					img(src="assets/images/merch/merch-books.jpg").card-carousel__image
+					.card-carousel__title Find the perfect books for kids and adults
+					button.card-carousel__button View 
+				.card-carousel__item
+					img(src="assets/images/merch/merch-handmade.jpg").card-carousel__image
+					.card-carousel__title Local handmade artisian pottery 
+					button.card-carousel__button View 
+				.card-carousel__item
+					img(src="assets/images/merch/merch-shirts.jpg").card-carousel__image
+					.card-carousel__title Dete Merchandise 
+					button.card-carousel__button View 

@@ -2,19 +2,22 @@ import anime from 'animejs/lib/anime';
 // import * as SVG from '../svg/splash_bg.svg';
 
 const svg = document.querySelector('.splash_bg');
+const height = window.innerHeight
+svg.setAttribute('viewBox', `0 0 420 ${height}`)
+
 const line = svg.querySelector('path');
 const spacing = 80
-const numberOfLines = Math.ceil(window.innerWidth / 80)
+const numberOfLines = Math.ceil(window.innerWidth / spacing)
 
 function animateLine(lineClone, CV) {
 	const dValue = [{
 		value: [
 			`M ${CV.top.PX}, ${CV.top.PY} C ${CV.top.CX}, ${CV.top.CY}, ${CV.bottom.CX}, ${CV.bottom.CY}, ${CV.bottom.PX}, ${CV.bottom.PY}`,
-			`M ${CV.top.PX}, ${CV.top.PY} C ${CV.top.CX + 1000}, ${CV.top.CY + 500}, ${CV.bottom.CX - 1000}, ${CV.bottom.CY + 400}, ${CV.bottom.PX}, ${CV.bottom.PY}`,
+			`M ${CV.top.PX}, ${CV.top.PY} C ${CV.top.CX + 1000}, ${CV.top.CY + 500}, ${CV.bottom.CX - 1000}, ${CV.bottom.CY - 100}, ${CV.bottom.PX}, ${CV.bottom.PY}`,
 		],
 	},
 	{
-		value: `M ${CV.top.PX}, ${CV.top.PY} C ${CV.top.CX - 500}, ${CV.top.CY + 400}, ${CV.bottom.CX}, ${CV.bottom.CY + 300}, ${CV.bottom.PX}, ${CV.bottom.PY}`,
+		value: `M ${CV.top.PX}, ${CV.top.PY} C ${CV.top.CX - 500}, ${CV.top.CY + 400}, ${CV.bottom.CX}, ${CV.bottom.CY + 150}, ${CV.bottom.PX}, ${CV.bottom.PY}`,
 	},
 	];
 
@@ -44,7 +47,7 @@ function createLines() {
 			bottom: {
 				PX: shiftX,
 				// height of whole animation
-				PY: 1024,
+				PY: height,
 				CX: 512 + shiftX,
 				CY: 512,
 			},
@@ -60,11 +63,10 @@ function createLines() {
 			duration: 1500,
 			strokeDashoffset: [anime.setDashoffset, 0],
 			complete: () => {
-				// const line = args.animatables[0].target
-				lineClone.strokeDasharray = 'none';
+				lineClone.style.strokeDasharray = 'none';
 				animateLine(lineClone, CV)
 			},
-			delay: 100 * i,
+			delay: 150 * i,
 		});
 	}
 }

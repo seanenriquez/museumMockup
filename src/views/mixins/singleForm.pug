@@ -1,0 +1,12 @@
+
+
+mixin singleForm($type, $buttonText, $placeHolderText,$label)
+	if $label
+		form.single-form.with-label
+			label(for="") #{$label} 
+			input(type=$type placeholder=$placeHolderText).single-form__input
+			button(role='submit').single-form__button= $buttonText
+	else
+		form.single-form
+			input(type=$type placeholder=$placeHolderText).single-form__input
+			button(role='submit').single-form__button= $buttonText

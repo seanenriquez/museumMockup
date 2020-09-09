@@ -1,0 +1,21 @@
+.news-letter {
+	color: $color-secondary;
+	background-color: white;
+	border: $dark-thick-border;
+	padding: 1rem;
+	margin-bottom: 3rem;
+
+	&__info {
+		margin-bottom: auto;
+		max-width: 45ch;
+	}
+
+	&__form {
+		height: 0;
+		width: 100%;
+	}
+
+	@include respond-to('small') {
+		margin-bottom: 0;
+	}
+}
