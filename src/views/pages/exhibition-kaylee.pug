@@ -1,0 +1,15 @@
+extends ./../layouts/base
+
+block vars
+  - title = 'Contact'
+  - bodyClass = 'contact-page'
+  - currentUrl = 'contact.html'
+
+block content
+  main(role="main").flex-shrink-0
+    .container-fluid
+      h1.page-title= title
+      p Please do not hesitate to contact us at any time if you have any further questions or concerns and we are always ready to assist you.
+      p We would love to work with you on your next projects.
+      p Contact us today to discuss your next projects or just drop us a line at 
+        +link('Contact us', 'mailto:contact@spider.vn', 'contact@spider.vn')
