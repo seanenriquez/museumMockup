@@ -61,16 +61,7 @@ block content
 					img(src="assets/content/artists/artist_4/art/5.jpg", alt="")
 		+hr('left',colorPrimary) 
 		section.news-letter-and-schedule
-			.news-letter
-				h3.news-letter__title Join our monthly newsletter
-				.news-letter__info
-					ul
-						li Latest updates about new exhibits and events.
-						li Coupns for day passes and DETE merchandise.
-						li Access to virtual exhibits.
-						li And more!
-				.news-letter__form
-					+singleForm('E-Mail','Join','E-mail Address')
+			+newsletter()
 			.info-box
 				h3.info-box__title Daily rates and hours
 				.info-box__content

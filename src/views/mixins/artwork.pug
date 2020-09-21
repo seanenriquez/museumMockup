@@ -1,0 +1,8 @@
+mixin artwork(format, artData)
+	.artwork(class=`artwork--${format}`)
+			img(src=artData.image, alt="").artwork__image
+			article.artwork__article
+				.artwork__title
+					h2=artData.title
+					h4.artwork__date= artData.date
+				.artwork__description= artData.description

@@ -1,0 +1,137 @@
+.artist-exhibit {
+	display: grid;
+
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
+
+	&__title {
+		align-self: self-start;
+		background-color: $color-secondary;
+		color: white;
+	}
+
+	&__picture {}
+
+	&__info {
+		padding: 1rem;
+	}
+
+	&__socials {
+		position: relative;
+		top: -2rem;
+		background-color: white;
+		padding: 1rem;
+		height: 0;
+	}
+
+	&__bio {
+		padding: 1rem;
+	}
+
+	@include respond-to('small') {
+		max-width: auto;
+		//grid-template-rows: 10% 90%;
+		grid-template-columns: 35% 65%;
+
+		&__picture {
+
+			grid-column: 1/2;
+		}
+	}
+
+	@include respond-to('medium') {
+		max-width: 85%;
+
+	}
+}
+
+.artwork {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+
+	&__title {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__article {
+		padding: 1rem;
+	}
+
+	&__image {
+		width: 100%;
+	}
+
+	@include respond-to('small') {
+
+		//flex-direction: row;
+		flex-direction: row;
+
+		&__image {
+			width: 50%;
+			flex-basis: 70%;
+		}
+
+		&__article {
+			flex-basis: 30%;
+		}
+
+		&--left {
+			flex-direction: row-reverse;
+		}
+
+		&--right {
+			flex-direction: row;
+		}
+
+		&--full {
+			flex-direction: column;
+
+			.artwork__image {
+				width: 100%;
+			}
+		}
+	}
+
+	@include respond-to('medium') {
+		max-width: 85%;
+
+	}
+
+
+}
+
+
+.news-letter-and-socials {
+	
+	@include respond-to('small') {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+
+		&::before {
+			content: '';
+			width: 100%;
+			height: 6rem;
+			position: absolute;
+			z-index: -10;
+			background-color: $color-secondary-mid;
+		}
+
+		.socials {
+			color: $white;
+		}
+
+		.news-letter {}
+	}
+	
+}

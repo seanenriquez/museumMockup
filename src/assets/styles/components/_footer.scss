@@ -39,13 +39,12 @@
 
 	&__logo {
 		opacity: 0.1;
-		height: 0;
-		// position: relative;
-		// top:-3rem;
 		user-select: none;
 		pointer-events: none;
 		position: absolute;
 		left:0;
+		overflow: hidden;
+		width: 100%;
 		h1 {
 			font-size: 6rem;
 		}

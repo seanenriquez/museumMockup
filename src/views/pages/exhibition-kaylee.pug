@@ -1,15 +1,35 @@
 extends ./../layouts/base
 
 block vars
-  - title = 'Contact'
-  - bodyClass = 'contact-page'
-  - currentUrl = 'contact.html'
+	- currentUrl = 'exhibition-kaylee.html'
+	- title = 'Featuring Kaylee Hauss'
+	- artistName = 'Kaylee Hauss'
+	- artistPicture = '../../assets/content/artists/artist_4/profile.jpg'
+	- artistBio = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.'
+	- artistWebsite = 'KayleeHaussHouse.com'
+	- artistWork = '../../assets/content/artists/artist_4/art'
+	- artData = {first:{title: "Labore bex",description: "Consequat sit ad ut labore ex irure magna nostrud id ut officia. Irure id quis dolore non cillum anim culpa veniam ex Lorem quis adipisicing. Labore id et veniam cillum velit irure veniam nulla incididunt exercitation fugiat.",date: 1999,image:`${artistWork}/1.jpg`},second:{title: "Nostrud",description: "Ullamco Lorem ullamco aute fugiat sunt non ullamco anim fugiat consectetur est nostrud exercitation exercitation. Laborum ut magna occaecat incididunt laborum minim Lorem amet anim in veniam. Ut culpa eu aliqua deserunt.",date: 2012,image:`${artistWork}/2.jpg`},third:{title: "Qui",description: "Minim id pariatur veniam irure ea culpa mollit non in. Aliquip tempor minim pariatur nostrud sint adipisicing fugiat cillum mzagna ineiusmod. Culpa eu amet ex qui laboris elit eu ullamco sint qui pariatur reprehenderit ea deserunt.",date: 2016,image:`${artistWork}/3.jpg`},fourth:{title: "Elit",description: "Nulla et dolore officia tempor fugiat magna est pariatur magna magna dolor. Aliquip nostrud aute non reprehenderit. Veniam quiconsequat fugiat excepteur anim tempor nostrud in ullamco id. Incididunt sint aliquip reprehenderit elit ad ea. Nostrud aute nisi fugiatconsectetur anim anim irure. Ut fugiat culpa amet non sit nostrud officia.",date:2011 ,image:`${artistWork}/4.jpg`},fifth:{title: "Laboris",description: "Fugiat ipsum occaecat velit eiusmod amet exercitation eu Lorem minim ullamco eu. Et ut ullamco excepteur elit. Ut quis commodo eadolor ut. Laborum cupidatat magna pariatur aliqua consectetur.",date: 2006,image:`${artistWork}/5.jpg`},sixth:{title: "Enim Id",description: "Duis adipisicing magna do eiusmod do. Ea non enim laboris laboris dolor nulla non ullamco dolor commodo eiusmod cupidatat. Enimreprehenderit culpa cillum do sint non reprehenderit.",date:2000 ,image:`${artistWork}/6.jpg`}}
 
 block content
-  main(role="main").flex-shrink-0
-    .container-fluid
-      h1.page-title= title
-      p Please do not hesitate to contact us at any time if you have any further questions or concerns and we are always ready to assist you.
-      p We would love to work with you on your next projects.
-      p Contact us today to discuss your next projects or just drop us a line at 
-        +link('Contact us', 'mailto:contact@spider.vn', 'contact@spider.vn')
+	main(role="main")
+		.artist-exhibit
+			h1.artist-exhibit__title= artistName	
+			img(src=artistPicture, alt="").artist-exhibit__picture
+			.artist-exhibit__info
+				.artist-exhibit__socials
+					a(href="#")= artistWebsite
+				.artist-exhibit__bio= artistBio
+		+hr('left',colorPrimary)
+		+artwork('left', artData.first)
+		+artwork('right', artData.second)
+		+hr('right',colorSecondary)
+		+artwork('full', artData.third)
+		section.news-letter-and-socials
+			+newsletter()
+			.socials
+				h3 Explore DETE social media
+		+artwork('left', artData.fourth)
+		+hr('left',colorTertiary)
+		+artwork('right', artData.fifth)
+		+artwork('full', artData.sixth)
+		+hr('right',colorPrimary) 
