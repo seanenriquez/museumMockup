@@ -1,0 +1,27 @@
+
+.social {
+	&__list {
+		list-style: none;
+		display: flex;
+	}
+
+	&__item {
+		padding-right: 1rem;
+		svg {
+			height: 2rem;
+			width: 2rem;
+			&:hover {
+				transform: scale(1.2);
+				
+			}
+		}
+		
+	}
+
+	// &__icon {
+	// 	height: 2rem;
+	
+	// 		background-color: white;
+		
+	// }
+}

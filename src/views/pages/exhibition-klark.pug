@@ -17,7 +17,14 @@ block content
 			img(src=artistPicture, alt="").artist-exhibit__picture
 			.artist-exhibit__info
 				.artist-exhibit__socials
-					a(href="#")= artistWebsite
+					.social
+						ul.social__list
+							li.social__item
+								a(href="#")= artistWebsite
+							li.social__item
+								+icon('facebook',colorTertiary)
+							li.social__item
+								+icon('youtube',colorTertiary)
 				.artist-exhibit__bio= artistBio
 		+hr('left',colorPrimary)
 		+artwork('left', artData.first)
@@ -26,8 +33,21 @@ block content
 		+artwork('full', artData.third)
 		section.news-letter-and-socials
 			+newsletter()
-			.socials
+			.social
 				h3 Explore DETE social media
+				ul.social__list
+					li.social__item
+						a(href="#")
+							+icon('snapchat',colorTertiary)
+					li.social__item
+						a(href="#")
+							+icon('instagram',colorTertiary)
+					li.social__item
+						a(href="#")
+							+icon('facebook',colorTertiary)
+					li.social__item
+						a(href="#")
+							+icon('youtube',colorTertiary)
 		+artwork('left', artData.fourth)
 		+hr('left',colorTertiary)
 		+artwork('right', artData.fifth)

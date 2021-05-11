@@ -1,6 +1,5 @@
 .artist-exhibit {
 	display: grid;
-
 	margin-left: auto;
 	margin-right: auto;
 	justify-content: center;
@@ -127,8 +126,12 @@
 			background-color: $color-secondary-mid;
 		}
 
-		.socials {
+		.social {
 			color: $white;
+
+			&__list {
+				    justify-content: space-between;
+			}
 		}
 
 		.news-letter {}

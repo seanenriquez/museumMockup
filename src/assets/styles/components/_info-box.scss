@@ -10,11 +10,16 @@
 		height: 0;
 
 		button {
+			cursor: pointer;
 			border: $dark-thick-border;
 			background-color: $color-primary;
 			color: white;
 			font-size: 1.2rem;
 			font-weight: bold;
+			&:hover {
+				background-color: white;
+				color:$color-primary;
+			}
 		}
 	}
 

@@ -9,27 +9,34 @@ block vars
 block content
 	main(role="main")
 		section.splash
-			.splash__header.bg-primary
-				h3.bold DETE @ Home 
+			.splash__tickets.bg-primary
+				p.bold Reserve Your Tickets &#8250;
+			//- .splash__header.bg-primary
+			//- 	h3.bold DETE @ Home 
 			.splash__events.bg-white
-				h3 Upcomming Events
+				h3.splash__events-title Upcomming Events
 				.events
-					.events__item
+					a(href="#").events__item
 						.event__item--photo
-							img(src="https://via.placeholder.com/120", alt="")
+							img(src="/assets/images/group-talk.jpg", alt="")
 						.event__item--caption
-							p.bold Leimert Park Live!
-							p.text-secondary Jul 30 | 7pm
-					.events__item
+							p.bold Artist Insight - A Look into the future of fine art.
+							p.text-secondary Conversations and Talks
+							p.text-secondary.highlight Jul 30 | 7pm
+					a(href="#").events__item
 						.event__item--photo
-							img(src="https://via.placeholder.com/120", alt="")
+							img(src="/assets/images/children-doll.jpg", alt="")
 						.event__item--caption
-							p.bold Leimert Park Live!
-							p.text-secondary Jul 30 | 7pm
+							p.bold Workshop: RAWR - Build your Inner Animal!
+							p.text-secondary Family/Children Program
+							p.text-secondary.highlight Aug 5 | 7pm
 			.splash__video
 				video(src=videoUrl autoplay="false" loop="true")
-			.wave__background
-				include ../assets/svg/splash_bg.svg
+				//- .splash__video-overlay 
+				//- 	h3 Hello world
+				
+			//- .wave__background
+			//- 	include ../assets/svg/splash_bg.svg
 
 		section.exhibitions
 			h1.exhibitions__header Exhibitions
@@ -38,7 +45,7 @@ block content
 					h2.showcase__title Klark Smith
 					.showcase__details
 						p.highlight New Exhibit
-						p abstract oil paint collection
+						p Abstract oil paint collection
 				.showcase__arrow--primary
 				.showcase__picture.bg-primary
 					img(src="assets/content/artists/artist_1/art/1.jpg", alt="")

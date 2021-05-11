@@ -6,5 +6,6 @@
   "prettier.arrowParens": "always",
   "prettier.jsxSingleQuote": true,
   "prettier.jsxBracketSameLine": true,
-  "prettier.packageManager": "yarn"
+"prettier.packageManager": "yarn",
+"liveServer.settings.port": 5501
 }
